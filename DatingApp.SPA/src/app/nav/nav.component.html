@@ -8,19 +8,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Project name</a>
+      <a class="navbar-brand" [routerLink]="['/home']" >Dating App</a>
       <ul class="navbar-nav mr-auto" *ngIf="loggedIn()">
-          <li class="nav-item active">
+         <li class="nav-item " routerLinkActive="active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Matches</a>
+          <li class="nav-item" routerLinkActive="active" >
+            <a class="nav-link" [routerLink]="['/members']">Matches</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Lists</a>
+          <li class="nav-item"  routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['/lists']" >Lists</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
+          <li class="nav-item"  routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['/message']" >Messages</a>
           </li>
         </ul>
     </div>
@@ -39,8 +39,8 @@
       <ul *ngIf="loggedIn()" class="nav navbar-nav navbar-right"  >
        <!-- <li><a (click)="logout()">Logout</a></li>-->
         <li class="dropdown" dropdown>
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" 
-          aria-haspopup="true" aria-expanded="false" dropdownToggle >Welcom {{authService.decodedToken?.unique_name | titlecase}} <span class="caret"></span></a>
+          <a class="dropdown-toggle" data-toggle="dropdown"  role="" 
+          aria-haspopup="false" aria-expanded="false" dropdownToggle >Welcom {{authService.decodedToken?.unique_name | titlecase}} <span class="caret"></span></a>
           <ul class="dropdown-menu mt-3" *dropdownMenu >
             <li class="dropdown-item" href="#"><i class="fa fa-user"> Edit Profile</i></li>
             <div class="dropdown-divider"></div>
